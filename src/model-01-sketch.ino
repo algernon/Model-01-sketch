@@ -38,8 +38,8 @@
 // Support for Keyboardio's internal keyboard testing mode
 #include "Kaleidoscope-Model01-TestMode.h"
 
-#include <Kaleidoscope-OneShot.h>
-#include <kaleidoscope/hid.h>
+#include "Kaleidoscope-OneShot.h"
+#include "kaleidoscope/hid.h"
 
 
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
