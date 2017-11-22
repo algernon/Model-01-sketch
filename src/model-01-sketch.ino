@@ -33,14 +33,16 @@
 #include "Kaleidoscope-LEDEffect-BootGreeting.h"
 
 // Support for an LED mode that lights up the keys as you press them
-#include "Kaleidoscope-LED-Stalker.h"
+// #include "Kaleidoscope-LED-Stalker.h"
 
 // Support for Keyboardio's internal keyboard testing mode
 #include "Kaleidoscope-Model01-TestMode.h"
 
 #include "Kaleidoscope-OneShot.h"
-#include "kaleidoscope/hid.h"
 
+#include "Kaleidoscope-Escape-OneShot.h"
+
+#include "Kaleidoscope-LED-ActiveModColor.h"
 
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
   * The names aren't particularly important. What is important is that each
@@ -220,7 +222,7 @@ void setup() {
     &LEDControl,
 
     // The stalker effect lights up the keys you've pressed recently
-    &StalkerEffect,
+    // &StalkerEffect,
 
     // The numpad plugin is responsible for lighting up the 'numpad' mode
     // with a custom LED effect
@@ -232,7 +234,11 @@ void setup() {
     // The MouseKeys plugin lets you add keys to your keymap which move the mouse.
     &MouseKeys,
 
-    &OneShot
+    &OneShot,
+
+    &EscapeOneShot,
+
+    &ActiveModColorEffect
 
   );
 
@@ -243,10 +249,10 @@ void setup() {
   // The LED Stalker mode has a few effects. The one we like is
   // called 'BlazingTrail'. For details on other options,
   // see https://github.com/keyboardio/Kaleidoscope-LED-Stalker
-  StalkerEffect.variant = STALKER(BlazingTrail);
+  // StalkerEffect.variant = STALKER(BlazingTrail);
+
 
 }
-
 /** loop is the second of the standard Arduino sketch functions.
   * As you might expect, it runs in a loop, never exiting.
   *
